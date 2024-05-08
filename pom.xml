@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>lv.venta</groupId>
-	<artifactId>JAVA_Sem6_2ITB2_2024</artifactId>
+	<artifactId>JAVA_Sem6</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>JAVA_Sem6_2ITB2_2024</name>
+	<name>JAVA_Sem6</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>

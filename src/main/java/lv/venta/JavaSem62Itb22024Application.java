@@ -1,3 +1,4 @@
+
 package lv.venta;
 
 import org.springframework.boot.CommandLineRunner;
@@ -51,6 +52,15 @@ public class JavaSem62Itb22024Application {
 				grRepo.save(gr1);
 				grRepo.save(gr2);
 				grRepo.save(gr3);
+				
+				//TODO veidot servisa slāni ar :
+				/*
+				 * selectGradesByStudent() - return all grades of specific student;
+				   selectCoursesByStudent() - return all courses where specific student is
+involved;
+○ selectCoursesByProfessor() - return all courses of specific professor;
+○ calculateAVGGradeInCourse() - return average grade in specific course;
+				 */
 				
 			}
 		};
