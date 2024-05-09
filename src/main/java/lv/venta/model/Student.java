@@ -1,4 +1,3 @@
-
 package lv.venta.model;
 
 import java.util.Collection;
@@ -29,7 +28,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Student {
+public class Student extends Person{
 	
 	@Column(name="IdS")
 	@Id
@@ -37,17 +36,6 @@ public class Student {
 	@Setter(value = AccessLevel.NONE)
 	private int idS;
 	
-	@Column(name = "Name")
-	@NotNull
-	@Size(min = 2, max = 20)
-	@Pattern(regexp = "[A-Z]{1}[a-z]+") //TODO nokopēt no cita seminaŗa ar mīkstinajumiem un garumzīmem
-	private String name;
-	
-	@Column(name = "Surname")
-	@NotNull
-	@Size(min = 2, max = 40)
-	@Pattern(regexp = "[A-Z]{1}[a-z]+") //TODO nokopēt no cita seminaŗa ar mīkstinajumiem un garumzīmem
-	private String surname;
 	
 	@OneToMany(mappedBy = "student")
 	@ToString.Exclude
@@ -56,8 +44,7 @@ public class Student {
 	
 	
 	public Student(String name, String surname) {
-		setName(name);
-		setSurname(surname);
+		super(name, surname);
 	}
 
 }

@@ -27,24 +27,12 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Professor {
+public class Professor extends Person{
 	@Column(name="IdP")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Setter(value = AccessLevel.NONE)
 	private int idP;
-	
-	@Column(name = "Name")
-	@NotNull
-	@Size(min = 2, max = 20)
-	@Pattern(regexp = "[A-Z]{1}[a-z]+") //TODO nokopēt no cita seminaŗa ar mīkstinajumiem un garumzīmem
-	private String name;
-	
-	@Column(name = "Surname")
-	@NotNull
-	@Size(min = 2, max = 40)
-	@Pattern(regexp = "[A-Z]{1}[a-z]+") //TODO nokopēt no cita seminaŗa ar mīkstinajumiem un garumzīmem
-	private String surname;
 	
 	@Column(name = "Degree")
 	@NotNull
@@ -58,8 +46,7 @@ public class Professor {
 
 	
 	public Professor(String name, String surname, Degree degree) {
-		setName(name);
-		setSurname(surname);
+		super(name, surname);
 		setDegree(degree);
 	}
 	
