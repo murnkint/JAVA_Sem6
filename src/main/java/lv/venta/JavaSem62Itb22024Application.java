@@ -1,4 +1,3 @@
-
 package lv.venta;
 
 import org.springframework.boot.CommandLineRunner;
@@ -38,34 +37,13 @@ public class JavaSem62Itb22024Application {
 				
 				Professor p1 = new Professor("Karina", "Skirmante", Degree.mg);
 				Professor p2 = new Professor("Vairis", "Caune", Degree.phd);
-				Professor p3 = new Professor("Marcis", "Naktins", Degree.phd);
-				Professor p4 = new Professor("Arturs", "Orbitans", Degree.phd);
 				profRepo.save(p1);
 				profRepo.save(p2);
-				profRepo.save(p3);
-				profRepo.save(p4);
 				
 				Course c1 = new Course("JAVA", 4, p1);
 				Course c2 = new Course("Algoritmu teorija", 2, p2);
-				Course c3 = new Course("Objektorienta programmesana II", 4, p1);
-				Course c4 = new Course("Operetajsistemas", 2, p3, p4);
 				courseRepo.save(c1);
 				courseRepo.save(c2);
-				courseRepo.save(c3);
-				courseRepo.save(c4);
-				
-				p1.addCourse(c1);
-				p1.addCourse(c3);
-				profRepo.save(p1);
-				
-				p2.addCourse(c2);
-				profRepo.save(p2);
-				
-				p3.addCourse(c4);
-				profRepo.save(p3);
-				
-				p4.addCourse(c4);
-				profRepo.save(p4);
 				
 				Grade gr1 = new Grade(st1, c1, 6);
 				Grade gr2 = new Grade(st1, c2, 9);

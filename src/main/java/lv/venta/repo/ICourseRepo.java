@@ -11,7 +11,7 @@ public interface ICourseRepo extends CrudRepository<Course, Integer>{
 	//public abstract pēc nosklusejuma
 	ArrayList<Course> findByCp(int cp);
 	//public abstract pēc nosklusejuma
-	ArrayList<Course> findByProfessorsIdP(int id);
+	ArrayList<Course> findByProfessorIdpe(int id);
 	//public abstract pēc nosklusejuma
-	ArrayList<Course> findByGradesStudentIdS(int id);
+	ArrayList<Course> findByGradesStudentIdpe(int id);
 }

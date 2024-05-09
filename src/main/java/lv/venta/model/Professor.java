@@ -1,15 +1,11 @@
 package lv.venta.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-
+import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
@@ -21,27 +17,29 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+//TODO
+//izveidot personas kalsi ar vārdu un uzvardu
+//papaildinat ar vajadzīgam anotācijam
+//stuednts klasi mantot no sis personas kalses
+//propfesora klasi mantot no šis klases
+//apskjatīties apmacibu par mantosanu ar Spring
+
 @Table(name = "ProfessorTable")
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-public class Professor extends Person{
-	@Column(name="IdP")
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Setter(value = AccessLevel.NONE)
-	private int idP;
+public class Professor extends Person {
 	
 	@Column(name = "Degree")
 	@NotNull
 	private Degree degree;
 	
-	//gadījums, kad Profesoram dŗīkst būt vairāk kā viens kurss
-	@ManyToMany(mappedBy = "professors")
+	//gadījums, kad Profesoram dŗīkst būt tikai viens kurss
+	@OneToOne(mappedBy = "professor")
 	@ToString.Exclude
-	private Collection<Course> courses = new ArrayList<Course>();
+	private Course course;
 	
 
 	
@@ -49,17 +47,4 @@ public class Professor extends Person{
 		super(name, surname);
 		setDegree(degree);
 	}
-	
-	public void addCourse(Course course) {
-		if(!courses.contains(course))
-			courses.add(course);
-		
-	}
-	
-	public void removeCourse(Course course) {
-		if(courses.contains(course))
-			courses.remove(course);
-	}
-	
-	
 }

@@ -30,19 +30,11 @@ import lombok.ToString;
 @ToString
 public class Student extends Person{
 	
-	@Column(name="IdS")
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Setter(value = AccessLevel.NONE)
-	private int idS;
-	
 	
 	@OneToMany(mappedBy = "student")
 	@ToString.Exclude
 	private Collection<Grade> grades;
-	
-	
-	
+
 	public Student(String name, String surname) {
 		super(name, surname);
 	}

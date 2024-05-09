@@ -16,7 +16,7 @@ public class GradeFilterController {
 	@Autowired
 	private IGradeFilterService gradeService;
 	
-	@GetMapping("/student/{id}")//localhost:8080/grade/filter/student/2
+	@GetMapping("/student/{id}")//localhost:8080/grade/filter/student/1
 	public String getGradeFilterStudentById(@PathVariable("id") int id, 
 			Model model) {
 		
@@ -30,7 +30,7 @@ public class GradeFilterController {
 		}
 	}
 	
-	@GetMapping("/student/failed/{id}")//localhost:8080/grade/filter/student/failed/2
+	@GetMapping("/student/failed/{id}")//localhost:8080/grade/filter/student/failed/1
 	public String getGradeFailedFilterStudentById(@PathVariable("id") int id, 
 			Model model) {
 		
@@ -44,7 +44,7 @@ public class GradeFilterController {
 		}
 	}
 	
-	@GetMapping("/course/{id}")//localhost:8080/grade/filter/course/2
+	@GetMapping("/course/{id}")//localhost:8080/grade/filter/course/1
 	public String getAVGGradeInCourseById(@PathVariable("id") int id, 
 			Model model) {
 		
